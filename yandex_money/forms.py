@@ -95,8 +95,7 @@ class BasePaymentForm(forms.Form):
 
     @classmethod
     def check_md5(cls, cd):
-        return True
-        #return cls.make_md5(cd) == cd['md5']
+        return cls.make_md5(cd) == cd['md5']
 
     def clean_scid(self):
         scid = self.cleaned_data['scid']
